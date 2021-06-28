@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Unleash Cheese</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div id="brand">
+            <img id="logo" src="assets/logo.png">
+            <h1 id="brand-name">Unleash Cheese</h1>
+        </div>
+
+        <div id="menu">
+            <a  href="/">home</a> <span></span>
+            <a class="selected" href="menu.html">menu</a> <span></span>
+            <a  href="order.html">order</a>
+        </div>
+
+    </nav>
+
+   <section id="gallery">
+
+    <div id="myBtnContainer">
+        <button class="btn " onclick="filterSelection('starters')">Starters</button>
+        <button class="btn active" onclick="filterSelection('mac')">Mac N Cheese</button>
+        <button class="btn" onclick="filterSelection('desserts')"> Desserts</button>
+      </div>
+      
+      <!-- Portfolio Gallery Grid -->
+      <div class="galleryContainer">
+      <div class="row">
+        
+        <div class="column starters">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="Lights" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+        <div class="column starters">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="Nature" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+
+        <div class="column mac">
+            <div class="content">
+              <img src="/assets/slider1.jpg" alt="Mountains" style="width:100%">
+              <div class="details-section">
+              <h4>Smokin’ Mac N Cheese</h4>
+              <p>Beef Brisket in Beer ale coated in BBQ Hickory Sauce with fresh green onion.</p>
+              <span>$13.99</span>
+            </div>
+            </div>
+          </div>
+      
+        <div class="column mac">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="Car" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+        </div>
+        </div>
+        <div class="column mac">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="Car" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+        <div class="column mac">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="Car" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+      
+        <div class="column mac">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="People" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+        <div class="column desserts">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="People" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+        <div class="column desserts">
+          <div class="content">
+            <img src="/assets/slider1.jpg" alt="People" style="width:100%">
+            <div class="details-section"><h4>Lorem ipsum dolor sit.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, odit neque sed inventore qui ducimus voluptas.</p>
+            <span>$10</span></div>
+          </div>
+        </div>
+      <!-- END GRID -->
+      </div>
+
+    </div>
+
+   </section>
+
+   <section id="footer">
+    <div class="social">
+    <a href="#"><img src="/assets/facebook.png"></a>
+    <a href="#"><img src="/assets/instagram.png"></a>
+    <a href="#"><img src="/assets/twitter.png"></a>
+    <a href="#"><img src="/assets/email.png"></a>
+    </div>
+    <img class="footerImage" src="/assets/footerl.png">
+    <span>©2021 Unleash Cheese. All Rights reserved.</span>
+</section>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
