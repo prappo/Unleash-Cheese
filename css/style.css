@@ -3,6 +3,13 @@
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
 }
+
+body{
+  position:absolute;
+  width: 100%;
+
+}
+
 nav{
     display: flex;
     padding:25px 80px 25px 80px;
