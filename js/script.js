@@ -1,6 +1,6 @@
 // Menus paeg
 
-try{
+
 filterSelection("mac") // Execute the function and show all columns
 function filterSelection(c) {
   var x, i;
@@ -49,10 +49,6 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-}
-catch(err){
-
-}
 
 
 // Slider
