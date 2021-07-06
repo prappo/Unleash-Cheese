@@ -128,5 +128,40 @@ export default {}
   font-size: 3rem;
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .location-container{
+    width: 100%;
+  }
+
+  #grubhub > img {
+    width: 100%;
+  }
+
+  #doordash > img {
+    width: 100%;
+  }
+
+  .btnProvider{
+    font-size: 2rem;
+  }
+
+  .location select{
+    font-size: 2rem;
+  }
+
+  .location span {
+    font-size: 1.2rem;
+  }
+
+  .qoute{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  #order-section{
+    height: 90vh;
+  }
+
+}
 
 </style>

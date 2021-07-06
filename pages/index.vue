@@ -7,7 +7,8 @@
           gourmet Macaroni & Cheese <br />
           delivered straight to your door
         </p>
-        <a href="#" class="button">order now</a>
+        <!-- <a href="/order" class="button">order now</a> -->
+        <nuxt-link to="/order" class="button" exact>order now</nuxt-link>
       </div>
     </section>
 

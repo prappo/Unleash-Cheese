@@ -149,11 +149,11 @@
 
 <script>
 export default {
-    data(){
-        return {
-            defaultCat: 'mac'
-        }
-    },
+  data() {
+    return {
+      defaultCat: "mac",
+    };
+  },
   methods: {
     filterSelection(c) {
       var x, i;
@@ -296,5 +296,18 @@ export default {
 }
 .details-section:hover {
   display: inline;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Mobile view */
+  .row {
+    margin-left: 1%;
+  }
+
+  .btn {
+  
+  font-size: 1rem;
+ 
+}
 }
 </style>
