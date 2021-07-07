@@ -2,8 +2,10 @@
   <div>
     <nav>
       <div id="brand">
+        <a style="display:flex; gap:15px;text-decoration:none;align-items:center" href="/">
         <img id="logo" src="assets/logo.png" />
         <h1 id="brand-name">Unleash Cheese</h1>
+        </a>
       </div>
 
       <div id="menu">
@@ -63,6 +65,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 15px;
+ 
 }
 
 #brand-name {

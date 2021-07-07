@@ -20,44 +20,24 @@
 
     <section id="slider-section">
       <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="/assets/slider1.jpg" style="width: 100%" />
+        
+        
+        <div v-for="(slider , index ) in sliders" :key="index"  class="mySlides fade">
+         
+          <img :src="slider._embedded['wp:featuredmedia'][0].source_url" style="width: 100%" />
           <div class="text">
-            <h1>Piggy<br />Mac N Cheese</h1>
-            <p>
-              Tender Bacon Pieces with Bacon Jam <br />
-              topped with Fresh Green Onions
+            <h1 v-html="slider.title.rendered"></h1>
+            <p v-html="slider.content.rendered">
+         
             </p>
-            <a href="#" class="slider-button">see the menu</a>
+            <nuxt-link to="/menu" class="slider-button" exact=""
+              >see the menu</nuxt-link
+            >
           </div>
         </div>
 
-        <div class="mySlides fade">
-          <img src="/assets/slider2.jpg" style="width: 100%" />
-          <div class="text">
-            <h1>Cool<br />Mac N Cheese</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. <br />
-              Lorem ipsum dolor sit amet.
-            </p>
-            <a href="#" class="slider-button">see the menu</a>
-          </div>
-        </div>
-
-        <div class="mySlides fade">
-          <img src="/assets/slider3.jpg" style="width: 100%" />
-          <div class="text">
-            <h1>
-              Cool<br />
-              Cheese
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. <br />
-              Lorem ipsum dolor sit amet.
-            </p>
-            <a href="#" class="slider-button">see the menu</a>
-          </div>
-        </div>
+     
+       
 
         <a class="prev" @click="plusSlides(-1)"
           ><img src="/assets/prev.png"
@@ -71,11 +51,13 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  data(){
+  data() {
     return {
       slideIndex: 1,
-    }
+      sliders: null,
+    };
   },
   methods: {
     plusSlides(n) {
@@ -87,7 +69,7 @@ export default {
     showSlides(n) {
       var i;
       var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
+      // var dots = document.getElementsByClassName("dot");
       if (n > slides.length) {
         this.slideIndex = 1;
       }
@@ -97,9 +79,9 @@ export default {
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
+      // for (i = 0; i < dots.length; i++) {
+      //   dots[i].className = dots[i].className.replace(" active", "");
+      // }
 
       slides[this.slideIndex - 1].style.display = "block";
 
@@ -108,9 +90,39 @@ export default {
   },
 
   mounted() {
-  
-    this.showSlides(this.slideIndex);
+    
+    axios
+      .get("https://unleash-cheese.local/wp-json/wp/v2/slider?_embed")
+      .then( (response) => {
+        // handle success
+        console.log('Sliders data')
+        this.sliders = response.data;
+       
+        
+        console.log(this.sliders);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then( () => {
+        // always executed
+
+         this.showSlides(this.slideIndex);
+      });
+
+     
+
+      
   },
+
+  // watch:{
+  //   sliders(oldValue,newValue){
+  //     if(oldValue != null){
+  //       //  this.showSlides(this.slideIndex);
+  //     }
+  //   }
+  // }
 };
 </script>
 
@@ -353,7 +365,7 @@ export default {
 
 @media (min-width: 320px) and (max-width: 480px) {
   /* CSS */
-  
+
   #hero-section {
     background-size: cover;
     background-position-x: 85%;
@@ -429,7 +441,6 @@ export default {
   .right-section h1 {
     font-size: 3rem;
   }
-  
 
   .row {
     margin-left: 0% !important;
