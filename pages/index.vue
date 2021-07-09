@@ -12,12 +12,7 @@
       </div>
     </section>
 
-    <section id="first-section">
-      <div class="left-side">
-        <p>we take<br />cheese <br />seriously</p>
-      </div>
-    </section>
-
+    
     <section id="slider-section">
       <div class="slideshow-container">
         
@@ -47,6 +42,13 @@
         /></a>
       </div>
     </section>
+
+    <section id="first-section">
+      <div class="left-side">
+        <p>we take<br />cheese <br />seriously</p>
+      </div>
+    </section>
+
   </div>
 </template>
 
@@ -131,7 +133,7 @@ export default {
   background-image: url("/assets/hero.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: 70vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -171,8 +173,9 @@ export default {
 
 #first-section {
   background-image: url("/assets/section1.jpg");
+  background-position-y: -40px;
   background-size: cover;
-  height: 60vh;
+  height: 50vh;
   display: flex;
   align-items: center;
 }
@@ -192,7 +195,7 @@ export default {
 
 .mySlides img {
   vertical-align: middle;
-  height: 100vh;
+  height: 80vh;
 }
 
 /* Slideshow container */
@@ -209,7 +212,7 @@ export default {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 40%;
   /* width: auto; */
   /* padding: 16px; */
   /* margin-top: -22px; */
@@ -255,7 +258,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   background: linear-gradient(rgba(0, 130, 170, 0), rgba(124, 41, 22, 1));
-  height: 100vh;
+  height: 80vh;
 }
 
 .text h1 {

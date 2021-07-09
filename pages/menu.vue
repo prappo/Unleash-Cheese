@@ -2,7 +2,13 @@
   <div>
     <section id="gallery">
       <div id="myBtnContainer">
-        <button v-for="(category , index) in categories" :key="index" class="btn" :class="category.slug == defaultCat ? 'active': ''" @click="filterSelection(category.slug)">
+        <button
+          v-for="(category, index) in categories"
+          :key="index"
+          class="btn"
+          :class="category.slug == defaultCat ? 'active' : ''"
+          @click="filterSelection(category.slug)"
+        >
           {{ category.name }}
         </button>
         <!-- <button class="btn active" @click="filterSelection('mac')">
@@ -16,7 +22,12 @@
       <!-- Portfolio Gallery Grid -->
       <div class="galleryContainer">
         <div class="row">
-          <div v-for="(item , i) in items" :key="i" class="column" :class="item._embedded['wp:term'][0][0].slug">
+          <div
+            v-for="(item, i) in items"
+            :key="i"
+            class="column"
+            :class="item._embedded['wp:term'][0][0].slug"
+          >
             <!-- <div class="content">
            
               <img :src="item._embedded['wp:featuredmedia'][0].source_url" alt="Lights" style="width: 100%" />
@@ -30,12 +41,7 @@
             </div> -->
             <item :item="item"></item>
           </div>
-         
 
-       
-
-         
-         
           <!-- END GRID -->
         </div>
       </div>
@@ -44,15 +50,16 @@
 </template>
 
 <script>
-
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
       defaultCat: "entree",
-      itemsUrl: 'https://unleashedcheese.curotec.net/wp-json/wp/v2/items?_embed&per_page=100',
-      categoriesUrl: 'https://unleashedcheese.curotec.net/wp-json/wp/v2/categories',
-      items:null,
+      itemsUrl:
+        "https://unleashedcheese.curotec.net/wp-json/wp/v2/items?_embed&per_page=100",
+      categoriesUrl:
+        "https://unleashedcheese.curotec.net/wp-json/wp/v2/categories",
+      items: null,
       categories: null,
     };
   },
@@ -93,46 +100,40 @@ export default {
     },
   },
   mounted() {
-
     axios
       .get(this.categoriesUrl)
-      .then( (response) => {
+      .then((response) => {
         // handle success
 
         this.categories = response.data;
-       
       })
       .catch(function (error) {
         // handle error
         console.log(error);
       })
-      .then( () => {
+      .then(() => {
         // always executed
-
       });
 
-      axios
+    axios
       .get(this.itemsUrl)
-      .then( (response) => {
+      .then((response) => {
         // handle success
 
         this.items = response.data;
-        console.log(this.items)
-       
+        console.log(this.items);
       })
       .catch(function (error) {
         // handle error
         console.log(error);
       })
-      .then( () => {
+      .then(() => {
         // always executed
         this.filterSelection(this.defaultCat);
-
       });
 
-
-     // Execute the function and show all columns
-    console.log('default cat fired')
+    // Execute the function and show all columns
+    console.log("default cat fired");
     // Add active class to the current button (highlight it)
     var btnContainer = document.getElementById("myBtnContainer");
     var btns = btnContainer.getElementsByClassName("btn");
@@ -232,7 +233,6 @@ export default {
   justify-content: center;
 }
 
-
 /* .details-section:hover {
   display: inline;
 } */
@@ -244,12 +244,13 @@ export default {
   }
 
   .btn {
-  
-  font-size: 1rem;
+    font-size: 1rem;
+  }
+
+  .column {
+
+  width: 45%;
  
 }
 }
-
-
-
 </style>

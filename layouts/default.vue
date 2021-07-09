@@ -21,10 +21,10 @@
 
     <section id="footer">
       <div class="social">
-        <a href="#"><img src="/assets/facebook.png" /></a>
-        <a href="#"><img src="/assets/instagram.png" /></a>
-        <a href="#"><img src="/assets/twitter.png" /></a>
-        <a href="#"><img src="/assets/email.png" /></a>
+        <div class="footer-divider"></div>
+        <a href="https://www.facebook.com/unleashcheese/" target="__blank"><img src="/assets/facebook.png" /></a>
+        <a href="https://www.instagram.com/unleashcheese/" target="__blank"><img src="/assets/instagram.png" /></a>
+     
       </div>
       <img class="footerImage" src="/assets/footerl.png" />
       <span>©2021 Unleash Cheese. All Rights reserved.</span>
@@ -37,6 +37,10 @@
   padding: 0px;
   margin: 0px;
   font-family: "Montserrat", sans-serif;
+}
+
+.footer-divider{
+  width: 150px;
 }
 
 .aaa {
@@ -161,6 +165,10 @@ nav {
   }
   .footerImage {
     display: none;
+  }
+
+  .footer-divider{
+    width: 0px;
   }
 }
 </style>
