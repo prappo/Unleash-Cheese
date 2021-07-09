@@ -17,17 +17,18 @@
       <div class="galleryContainer">
         <div class="row">
           <div v-for="(item , i) in items" :key="i" class="column" :class="item._embedded['wp:term'][0][0].slug">
-            <div class="content">
+            <!-- <div class="content">
            
-              <img src="/assets/slider1.jpg" alt="Lights" style="width: 100%" />
+              <img :src="item._embedded['wp:featuredmedia'][0].source_url" alt="Lights" style="width: 100%" />
               <div class="details-section">
-                <h4>{{ item.title.rendered}}</h4>
+                <h4 v-html="item.title.rendered"></h4>
                 <p v-if="item.content.rendered" v-html="item.content.rendered">
                  
                 </p>
-                <span>${{ item.metadata.price[0]}}</span>
+                <span>$ {{ item.metadata.price[0]}}</span>
               </div>
-            </div>
+            </div> -->
+            <item :item="item"></item>
           </div>
          
 
@@ -49,8 +50,8 @@ export default {
   data() {
     return {
       defaultCat: "entree",
-      itemsUrl: 'https://unleash-cheese.local/wp-json/wp/v2/items?_embed',
-      categoriesUrl: 'https://unleash-cheese.local/wp-json/wp/v2/categories',
+      itemsUrl: 'https://unleashedcheese.curotec.net/wp-json/wp/v2/items?_embed&per_page=100',
+      categoriesUrl: 'https://unleashedcheese.curotec.net/wp-json/wp/v2/categories',
       items:null,
       categories: null,
     };
@@ -171,7 +172,7 @@ export default {
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 45%;
+  width: 20%;
   display: none; /* Hide columns by default */
 }
 
@@ -231,12 +232,10 @@ export default {
   justify-content: center;
 }
 
-.details-section {
-  display: none;
-}
-.details-section:hover {
+
+/* .details-section:hover {
   display: inline;
-}
+} */
 
 @media (min-width: 320px) and (max-width: 480px) {
   /* Mobile view */
@@ -250,4 +249,7 @@ export default {
  
 }
 }
+
+
+
 </style>

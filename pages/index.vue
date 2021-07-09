@@ -92,7 +92,7 @@ export default {
   mounted() {
     
     axios
-      .get("https://unleash-cheese.local/wp-json/wp/v2/slider?_embed")
+      .get("https://unleashedcheese.curotec.net/wp-json/wp/v2/slider?_embed")
       .then( (response) => {
         // handle success
         console.log('Sliders data')

@@ -47,7 +47,7 @@ export default {
     return {
       locations: null,
       selected: null,
-      locationsURL: "https://unleash-cheese.local/wp-json/wp/v2/locations",
+      locationsURL: "https://unleashedcheese.curotec.net/wp-json/wp/v2/locations",
     };
   },
   methods: {

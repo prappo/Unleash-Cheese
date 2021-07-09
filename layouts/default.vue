@@ -2,16 +2,16 @@
   <div>
     <nav>
       <div id="brand">
-        <a style="display:flex; gap:15px;text-decoration:none;align-items:center" href="/">
-        <img id="logo" src="assets/logo.png" />
-        <h1 id="brand-name">Unleash Cheese</h1>
+        <a class="aaa" href="/">
+          <img id="logo" src="assets/logo.png" />
+          <h1 id="brand-name">Unleash Cheese</h1>
         </a>
       </div>
 
       <div id="menu">
-          <nuxt-link to="/" exact>home</nuxt-link> <span></span>
-          <nuxt-link to="/menu" exact>menu</nuxt-link> <span></span>
-          <nuxt-link to="/order" exact>order</nuxt-link>
+        <nuxt-link to="/" exact>home</nuxt-link> <span></span>
+        <nuxt-link to="/menu" exact>menu</nuxt-link> <span></span>
+        <nuxt-link to="/order" exact>order</nuxt-link>
         <!-- <a class="selected" href="/">home</a> <span></span>
         <a href="/menu">menu</a> <span></span>
         <a href="/order">order</a> -->
@@ -37,6 +37,13 @@
   padding: 0px;
   margin: 0px;
   font-family: "Montserrat", sans-serif;
+}
+
+.aaa {
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  align-items: center;
 }
 
 body {
@@ -65,7 +72,6 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 15px;
- 
 }
 
 #brand-name {
@@ -95,7 +101,7 @@ nav {
 }
 
 .nuxt-link-active {
-    font-weight: 800 !important;
+  font-weight: 800 !important;
 }
 
 #menu span {
@@ -128,7 +134,7 @@ nav {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-nav {
+  nav {
     display: flex;
     flex-direction: column;
     padding: 20px 0px;
@@ -137,7 +143,11 @@ nav {
     display: flex;
     flex-direction: column;
   }
-  
+
+  .aaa{
+    flex-direction: column;
+  }
+
   #menu {
     margin-top: 10px;
   }
@@ -152,6 +162,5 @@ nav {
   .footerImage {
     display: none;
   }
-
 }
 </style>
